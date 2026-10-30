@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Randomize Selected Colors</name>
+    <id>org.custom.randomize_colors</id>
+
+    <param name="target" type="optiongroup" appearance="combo" gui-text="Apply To:">
+        <option value="fill">Fill Only</option>
+        <option value="stroke">Stroke Only</option>
+        <option value="both">Both Fill and Stroke</option>
+    </param>
+
+    <param name="mode" type="optiongroup" appearance="combo" gui-text="Palette Mode:">
+        <option value="discrete">Discrete (Exact colors from palette)</option>
+        <option value="gradient">Gradient (Interpolate continuous shade)</option>
+    </param>
+
+    <param name="palette_tab" type="notebook">
+        <page name="tab_swatches" gui-text="Visual Swatches">
+            <param name="num_colors" type="int" min="2" max="6" gui-text="Active Swatches to Use:">5</param>
+            <param name="color1" type="color" appearance="colorbutton" gui-text="Swatch 1:">4283897599</param>
+            <param name="color2" type="color" appearance="colorbutton" gui-text="Swatch 2:">872413183</param>
+            <param name="color3" type="color" appearance="colorbutton" gui-text="Swatch 3:">861437951</param>
+            <param name="color4" type="color" appearance="colorbutton" gui-text="Swatch 4:">4041641215</param>
+            <param name="color5" type="color" appearance="colorbutton" gui-text="Swatch 5:">2318131967</param>
+            <param name="color6" type="color" appearance="colorbutton" gui-text="Swatch 6:">3884318719</param>
+        </page>
+        
+        <page name="tab_hex" gui-text="Custom Hex List">
+            <param name="palette" type="string" gui-text="Hex Palette (comma-separated):">#ff5733, #33ff57, #3357ff, #f0e68c, #8a2be2</param>
+        </page>
+    </param>
+
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="Color"/>
+        </effects-menu>
+    </effect>
+
+    <script>
+        <command location="inx" interpreter="python">randomize_colors.py</command>
+    </script>
+</inkscape-extension>

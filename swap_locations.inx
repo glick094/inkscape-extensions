@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Swap Object Locations</name>
+    <id>org.custom.swap_locations</id>
+
+    <param name="anchor" type="optiongroup" appearance="combo" gui-text="Swap Reference Point:">
+        <option value="center">Center / Midpoint</option>
+        <option value="top_left">Top-Left Corner</option>
+        <option value="top_right">Top-Right Corner</option>
+        <option value="bottom_left">Bottom-Left Corner</option>
+        <option value="bottom_right">Bottom-Right Corner</option>
+    </param>
+
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="Arrange"/>
+        </effects-menu>
+    </effect>
+
+    <script>
+        <command location="inx" interpreter="python">swap_locations.py</command>
+    </script>
+</inkscape-extension>
